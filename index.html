@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Calculate Booth|Assignment 5</title>
+        <link rel="icon" href="img/icon.png" sizes="50x50">
+        <!-- tailwind 3.0.15 -->
+        <script src="js/tailwind.min.js"></script>
+        <!-- fontawesome 5.10 -->
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+        <!-- main Style -->
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+
+    <body>
+        <!--========================
+        |       Header Part        |
+         =========================-->
+        <header id="navbar" class="w-full">
+            <div class="container-lg md:pl-4 md:pr-8 md:pt-0">
+                <nav class="flex flex-wrap items-center justify-between py-4 md:py-0 px-4 text-xl text-gray-800 bg-white ">
+                    <!-- Brand -->
+                    <span class="brand font-semibold text-2xl text-indigo-500"><a href="#"> Calculate<span class="font-semibold text-purple-600"> Booth</span>
+                    <!-- <img class="w-8" src="img/icon.png" alt="logo">--></a>
+                    </span>
+                    <!-- toogle bars -->
+                    <a id="menu-button" class="h-6 w-6 cursor-pointer md:hidden block"> <i class="fas fa-bars"></i> </a>
+
+                    <!-- main menu -->
+                    <div class="hidden w-full md:flex md:items-center md:w-auto" id="menu">
+                        <ul class=" pt-4 text-base text-gray-700 md:flex md:justify-between md:pt-0">
+                            <li>
+                                <a class="md:p-4 py-2 block hover:text-purple-400" href="index.html"> <i class="fas fa-cart-arrow-down fa-1x text-indigo-500 text-xl"></i> <span id="cart-total"></span> </a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+
+        </header>
+        <!-- end header -->
+
+
+        <!--========================
+        |       Main Part         |
+        =========================-->
+        <main class="mt-20">
+            <!--========================
+            |       Login Part         |
+            =========================-->
+            <section class="p-8 mx-auto pt-0 rounded">
+                <div class="text-5xl text-center my-2 py-8">
+                    <h1 class="font-semibold">Calculate<span class="font-semibold text-purple-600"> Booth </span></h1>
+                </div>
+                <!-- end title -->
+                <div class="grid md:grid-cols-2 grid-cols-1">
+                    <div class="w-100 py-0 rounded">
+                        <img class="left-img" src="img/calculate.png" alt="">
+                    </div>
+                    <div class="w-100 py-8 bg-gray-100 rounded">
+                        <h3 class="text-xl font-semibold text-center">Income</h3>
+                        <div class="flex justify-center items-center py-2">
+                            <label for="income" class="text-xl font-semibold mx-2">Income:</label>
+                            <input id="income" type="text" placeholder="1000" class="p-2 bg-gray-200 text-black">
+                        </div>
+                        <!-- end income -->
+                        <h3 class="text-2xl font-semibold text-center">Expenses</h3>
+                        <div class="flex justify-center items-center py-2">
+                            <label for="food" class="text-xl font-semibold mx-5">Food:</label>
+                            <input id="food" type="text" placeholder="3000" class="p-2 bg-gray-200">
+                        </div>
+                        <!-- end Expenses -->
+                        <div class="flex justify-center items-center py-2">
+                            <label for="rent" class="text-xl font-semibold mx-5">Rent:</label>
+                            <input id="rent" type="text" placeholder="2000" class="p-2 bg-gray-200">
+                        </div>
+                        <!-- end Rent -->
+                        <div class="flex justify-center items-center py-2">
+                            <label for="cloth" class="text-xl font-semibold mx-2">Clothes:</label>
+                            <input id="cloth" type="text" placeholder="500" class="p-2 bg-gray-200">
+                        </div>
+                        <!-- end Clothes -->
+                        <div class="flex justify-center items-center py-2">
+                            <button id="calculate" class="py-2 px-12 ml-20 text-2xl font-semibold bg-blue-400 text-white text-center rounded">Calculate</button>
+                        </div>
+                        <!-- end calculate button -->
+                        <div class="flex justify-center items-center py-2">
+                            <p class="text-2xl font-semibold text-center">Total Expenses: <span id="total-expense">5500</span> </p>
+                        </div>
+                        <!-- end total expenses -->
+                        <div class="flex justify-center items-center py-2">
+                            <p class="text-2xl font-semibold text-center">Total Balance: <span id="total-balance">4500</span> </p>
+                        </div>
+                        <!-- end total balance -->
+                        <div class="md:flex justify-center items-center py-2">
+                            <label for="income" class="text-xl font-semibold mx-2">Save:</label>
+                            <input id="save-amount" type="text" placeholder="20" class="p-2 bg-gray-200">
+                            <span class="text-2xl px-2">%</span>
+                            <button id="save" class="py-2 px-20 ml-16 lg:px-20 lg:ml-4 text-2xl font-semibold bg-blue-400 text-white text-center rounded">Save</button>
+                        </div>
+                        <!-- end save -->
+                        <div class="flex justify-center items-center py-2">
+                            <p class="text-2xl font-semibold text-center">Saving Amount: <span id="total-save">2000</span> </p>
+                        </div>
+                        <!-- end total expenses -->
+                        <div class="flex justify-center items-center py-2">
+                            <p class="text-2xl font-semibold text-center">Remaining Balance: <span id="remaining-balance">2500</span> </p>
+                        </div>
+                        <!-- end total balance -->
+                    </div>
+
+                </div>
+
+
+            </section>
+            <!-- end login -->
+
+        </main>
+        <!-- end main -->
+
+        <!--========================
+        |       Footer Part        |
+        =========================-->
+        <footer class="text-center bg-indigo-200 py-1">
+            <p>&copy; 2022 All right reseved by calculatebooth.com</p>
+        </footer>
+        <!-- end footer -->
+
+        <!--========================
+        |      All Javascript      |
+        =========================-->
+        <script src="js/app.js"></script>
+    </body>
+
+</html>

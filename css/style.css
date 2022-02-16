@@ -1,0 +1,68 @@
+/* 
+* Author: Hasan
+* Github: https://github.com/hasanrafi69
+* Email: hasanrafi69@gmail.com
+* Mobile: +880-161-782323
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    font-size: 16px;
+}
+
+
+/* =======NavBar====== */
+
+#navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+#search {
+    background: #F1F1F1;
+    width: 25rem;
+    padding: 8px 20px;
+    border-radius: 40px;
+    position: relative;
+    color: #000;
+}
+
+.search-btn {
+    position: absolute;
+    right: 42%;
+    top: 1rem;
+}
+
+.fa-search,
+.fa-bars {
+    color: #BABABA;
+}
+
+
+/* footer */
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+
+/* Media */
+
+@media (min-width: 768px) {
+    .left-img {
+        width: 95%;
+        height: 100%;
+        border: 1px solid #f3f4f6;
+        border-radius: 5px;
+    }
+}
