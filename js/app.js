@@ -4,7 +4,10 @@
  * Email: hasanrafi69@gmail.com
  * Mobile: +880-161-782323
  */
-// ===========Mony Booth=========
+// =================================//
+//      Money Booth Assignment      //
+//==================================//
+// common varialbe
 const incomeId = document.getElementById('income');
 const totalExpenseId = document.getElementById('total-expense');
 const foodId = document.getElementById('food');
@@ -14,6 +17,12 @@ const totalBalanceId = document.getElementById('total-balance');
 const saveAmountId = document.getElementById('save-amount');
 const totalSaveId = document.getElementById('total-save');
 const remainingBalanceId = document.getElementById('remaining-balance');
+// error variable
+const incomeError = document.getElementById('income-error');
+const foodError = document.getElementById('food-error');
+const rentError = document.getElementById('rent-error');
+const clothError = document.getElementById('cloth-error');
+
 // Calculate Money
 function calculateMoney() {
     const income = parseFloat(incomeId.value);
@@ -22,19 +31,35 @@ function calculateMoney() {
     const cloth = parseFloat(clothId.value);
     const totalExpense = food + rent + cloth;
     const totalBalance = income - totalExpense;
-    if (income == '') {
-        alert('Income Cant be Null')
+    if (income == '' || income < 0) {
+        incomeError.style.display = "block";
+        totalBalanceId.innerText = 0;
+    } else {
+        incomeError.style.display = "none";
+        totalBalanceId.innerText = 0;
     }
-    if (food == '') {
-        alert('food Cant be Null')
+    if (food == '' || food < 0) {
+        foodError.style.display = "block";
+        totalBalanceId.innerText = 0;
+    } else {
+        foodError.style.display = "none";
+        totalBalanceId.innerText = 0;
     }
-    if (rent == '') {
-        alert('rent Cant be Null')
+    if (rent == '' || rent < 0) {
+        rentError.style.display = "block";
+        totalBalanceId.innerText = 0;
+    } else {
+        rentError.style.display = "none";
+        totalBalanceId.innerText = 0;
     }
-    if (cloth == '') {
-        alert('cloth insert number')
+    if (cloth == '' || cloth < 0) {
+        clothError.style.display = "block";
+        totalBalanceId.innerText = 0;
+    } else {
+        clothError.style.display = "none";
+        totalBalanceId.innerText = 0;
     }
-    debugger
+
     if (totalExpense > income) {
         totalBalanceId.innerHTML = `<p class="ml-1 text-xl text-red-600 text-center">You don't have enought money</p > `;
     } else {
