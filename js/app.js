@@ -33,31 +33,31 @@ function calculateMoney() {
     const totalBalance = income - totalExpense;
     if (income == '' || income < 0) {
         incomeError.style.display = "block";
-        totalBalanceId.innerText = 0;
+        // totalBalanceId.innerText = 0;
     } else {
         incomeError.style.display = "none";
-        totalBalanceId.innerText = 0;
+        // totalBalanceId.innerText = 0;
     }
     if (food == '' || food < 0) {
         foodError.style.display = "block";
-        totalBalanceId.innerText = 0;
+        // totalBalanceId.innerText = 0;
     } else {
         foodError.style.display = "none";
-        totalBalanceId.innerText = 0;
+        // totalBalanceId.innerText = 0;
     }
     if (rent == '' || rent < 0) {
         rentError.style.display = "block";
-        totalBalanceId.innerText = 0;
+        // totalBalanceId.innerText = 0;
     } else {
         rentError.style.display = "none";
-        totalBalanceId.innerText = 0;
+        // totalBalanceId.innerText = 0;
     }
     if (cloth == '' || cloth < 0) {
         clothError.style.display = "block";
-        totalBalanceId.innerText = 0;
+        // totalBalanceId.innerText = 0;
     } else {
         clothError.style.display = "none";
-        totalBalanceId.innerText = 0;
+        // totalBalanceId.innerText = 0;
     }
 
     if (totalExpense > income) {
@@ -101,8 +101,8 @@ function saveMoney() {
     if (isNaN(totalSaveAmount) || totalSaveAmount < 0) {
         totalSaveId.innerHTML = `<p class="ml-1 text-xl text-red-600 text-center">Please give all input value and saving %  + value</p>`;
     }
-    if (isNaN(remainingBalance)) {
-        remainingBalanceId.innerHTML = `<p class="ml-1 text-xl text-red-600 text-center">Please give all input value as a numer</p>`;
+    if (isNaN(remainingBalance) || totalSaveAmount < 0) {
+        remainingBalanceId.innerHTML = `<p class="ml-1 text-xl text-red-600 text-center">Please give all input value and saving %  + value</p>`;
     }
 
 }
@@ -115,3 +115,14 @@ document.getElementById('calculate').addEventListener('click', function() {
 document.getElementById('save').addEventListener('click', function(params) {
     saveMoney()
 });
+
+
+
+// ==========trying to apply but i failed==============
+// value function
+// function inputValue() {
+//     const income = parseFloat(incomeId.value);
+//     const food = parseFloat(foodId.value);
+//     const rent = parseFloat(rentId.value);
+//     const cloth = parseFloat(clothId.value);
+// }
