@@ -71,7 +71,9 @@ function saveMoney() {
     remainingBalanceId.innerText = remainingBalance;
 
     if (isNaN(totalSaveAmount)) {
-        totalSaveId.innerHTML = `<p class="ml-1 text-xl text-red-600 text-center">Please give all value as a numer</p>`;
+        totalSaveId.innerHTML = `<p class="ml-1 text-xl text-red-600 text-center">Please give toal and save value with numer</p>`;
+    }
+    if (isNaN(remainingBalance)) {
         remainingBalanceId.innerHTML = `<p class="ml-1 text-xl text-red-600 text-center">Please give all value as a numer</p>`;
     }
 
