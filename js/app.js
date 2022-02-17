@@ -97,7 +97,10 @@ function saveMoney() {
     const remainingBalance = totalBalance - totalSaveAmount
     totalSaveId.innerText = totalSaveAmount;
     remainingBalanceId.innerText = remainingBalance;
-
+    debugger
+    if (remainingBalance < 0) {
+        remainingBalanceId.innerHTML = `<p class="ml-1 text-xl text-red-600 text-center">Sorry! you are trying to get too much save</p>`;
+    }
     if (isNaN(totalSaveAmount) || totalSaveAmount < 0) {
         totalSaveId.innerHTML = `<p class="ml-1 text-xl text-red-600 text-center">Please give all input value and saving %  + value</p>`;
     }
