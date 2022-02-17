@@ -17,10 +17,13 @@ const remainingBalanceId = document.getElementById('remaining-balance');
 // Calculate Money
 function calculateMoney() {
     const income = parseFloat(incomeId.value);
+    console.log(typeof(income))
     const food = parseFloat(foodId.value);
+    console.log(typeof(food))
     const rent = parseFloat(rentId.value);
+    console.log(typeof(rent))
     const cloth = parseFloat(clothId.value);
-    const totalExpense = food + rent + cloth;
+    console.log(typeof(cloth))
     if (income == '' || typeof(income) != 'number') {
         alert('Income Cant be Null')
     }
@@ -34,15 +37,21 @@ function calculateMoney() {
         alert('cloth insert number')
     }
     if (typeof(income) == 'number' && typeof(food) == 'number' && typeof(rent) == 'number' && typeof(cloth) == 'number') {
-        totalExpenseId.innerText = totalExpense;
+        const totalExpense = food + rent + cloth;
         const totalBalance = income - totalExpense;
-        totalBalanceId.innerText = totalBalance;
-    } else {
-        totalExpenseId.innerHTML = `<p class="ml-1 text-xl text-red-600 text-center">Please give all value as a numer</p>`;
-        totalBalanceId.innerHTML = `<p class="ml-1 text-xl text-red-600 text-center">Please give all value as a numer</p>`;
+        if (isNaN(totalExpense)) {
+            totalExpenseId.innerHTML = `<p class="ml-1 text-xl text-red-600 text-center">Please give all value as a numer</p > `;
+        } else {
+            totalExpenseId.innerText = totalExpense;
+        }
+        if (isNaN(totalBalance)) {
+            totalBalanceId.innerHTML = `<p class="ml-1 text-xl text-red-600 text-center">Please give all value as a numer</p > `;
+
+        } else {
+            totalBalanceId.innerText = totalBalance;
+        }
+
     }
-
-
 
 }
 
@@ -56,13 +65,14 @@ function saveMoney() {
     const totalExpense = food + rent + cloth;
     const saveAmount = parseFloat(saveAmountId.value) / 100;
     const totalSaveAmount = income * saveAmount;
-    if (typeof(saveAmountId.value) == 'number' && typeof(income) == 'number' && typeof(food) == 'number' && typeof(rent) == 'number' && typeof(cloth) == 'number') {
-        totalSaveId.innerText = totalSaveAmount;
-        const totalBalance = income - totalExpense;
-        const remainingBalance = totalBalance - totalSaveAmount
-        remainingBalanceId.innerText = remainingBalance;
-    } else {
+    const totalBalance = income - totalExpense;
+    const remainingBalance = totalBalance - totalSaveAmount
+    totalSaveId.innerText = totalSaveAmount;
+    remainingBalanceId.innerText = remainingBalance;
+
+    if (isNaN(totalSaveAmount)) {
         totalSaveId.innerHTML = `<p class="ml-1 text-xl text-red-600 text-center">Please give all value as a numer</p>`;
+        remainingBalanceId.innerHTML = `<p class="ml-1 text-xl text-red-600 text-center">Please give all value as a numer</p>`;
     }
 
 }
