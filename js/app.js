@@ -60,7 +60,7 @@ function calculateMoney() {
 
     if (totalExpense > income) {
         totalExpenseId.innerText = 'Sorry! 😇';
-        totalBalanceId.innerHTML = `<p class="ml-1 text-xl text-red-600 text-center">You don't have enought money</p > `;
+        totalBalanceId.innerHTML = `<p class="ml-1 text-xl text-red-600 text-center">You don't have enough money</p > `;
     } else {
         if (typeof(income) == 'number' && typeof(food) == 'number' && typeof(rent) == 'number' && typeof(cloth) == 'number') {
             if (totalExpense > income) {
