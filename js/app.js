@@ -23,12 +23,18 @@ const foodError = document.getElementById('food-error');
 const rentError = document.getElementById('rent-error');
 const clothError = document.getElementById('cloth-error');
 
+//All Input Value function
+function inputValue(id) {
+    const inputMoney = parseFloat(id.value);
+    return inputMoney;
+}
+
 // Calculate Money
 function calculateMoney() {
-    const income = parseFloat(incomeId.value);
-    const food = parseFloat(foodId.value);
-    const rent = parseFloat(rentId.value);
-    const cloth = parseFloat(clothId.value);
+    const income = inputValue(incomeId);
+    const food = inputValue(foodId);
+    const rent = inputValue(rentId);
+    const cloth = inputValue(clothId);
     const totalExpense = food + rent + cloth;
     const totalBalance = income - totalExpense;
     if (income == '' || income < 0) {
@@ -57,7 +63,7 @@ function calculateMoney() {
     } else {
         if (typeof(income) == 'number' && typeof(food) == 'number' && typeof(rent) == 'number' && typeof(cloth) == 'number') {
             if (totalExpense > income) {
-                totalBalanceId.innerHTML = `<p class="ml-1 text-xl text-red-600 text-center">You don't have enought money</p > `;
+                totalBalanceId.innerHTML = `<p class="ml-1 text-xl text-red-600 text-center">You don't have enough money</p > `;
             }
             if (isNaN(totalExpense)) {
                 totalExpenseId.innerHTML = `<p class="ml-1 text-xl text-red-600 text-center">Give all input value as a numer</p > `;
@@ -78,12 +84,12 @@ function calculateMoney() {
 
 // Save Money
 function saveMoney() {
-    const income = parseFloat(incomeId.value);
-    const food = parseFloat(foodId.value);
-    const rent = parseFloat(rentId.value);
-    const cloth = parseFloat(clothId.value);
+    const income = inputValue(incomeId);
+    const food = inputValue(foodId);
+    const rent = inputValue(rentId);
+    const cloth = inputValue(clothId);
     const totalExpense = food + rent + cloth;
-    const saveAmount = parseFloat(saveAmountId.value) / 100;
+    const saveAmount = inputValue(saveAmountId) / 100;
     const totalSaveAmount = income * saveAmount;
     const totalBalance = income - totalExpense;
     const remainingBalance = totalBalance - totalSaveAmount
@@ -109,14 +115,3 @@ document.getElementById('calculate').addEventListener('click', function() {
 document.getElementById('save').addEventListener('click', function(params) {
     saveMoney()
 });
-
-
-
-// // ==========trying to apply but i failed==============
-// // value function
-// function inputValue() {
-//     const income = parseFloat(incomeId.value);
-//     const food = parseFloat(foodId.value);
-//     const rent = parseFloat(rentId.value);
-//     const cloth = parseFloat(clothId.value);
-// }
