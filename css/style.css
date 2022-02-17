@@ -47,6 +47,17 @@ body {
 }
 
 
+/* =====error===== */
+
+.hide {
+    display: none;
+}
+
+.display {
+    display: block;
+}
+
+
 /* footer */
 
 footer {
