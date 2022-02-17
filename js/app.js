@@ -20,10 +20,14 @@ function calculateMoney() {
     const food = foodId.value;
     const rent = rentId.value;
     const cloth = clothId.value;
-    const totalExpense = parseFloat(food) + parseFloat(rent) + parseFloat(cloth);
-    totalExpenseId.innerText = totalExpense;
-    const totalBalance = income - totalExpense;
-    totalBalanceId.innerText = totalBalance;
+    if (isNaN(income) || isNaN(food) || isNaN(rent) || isNaN(cloth)) {
+        alert('insert number')
+    } else {
+        const totalExpense = parseFloat(food) + parseFloat(rent) + parseFloat(cloth);
+        totalExpenseId.innerText = totalExpense;
+        const totalBalance = income - totalExpense;
+        totalBalanceId.innerText = totalBalance;
+    }
 }
 
 // Save Money
@@ -32,13 +36,17 @@ function saveMoney() {
     const food = foodId.value;
     const rent = rentId.value;
     const cloth = clothId.value;
-    const totalExpense = parseFloat(food) + parseFloat(rent) + parseFloat(cloth);
-    const saveAmount = parseFloat(saveAmountId.value) / 100;
-    const totalSaveAmount = income * saveAmount;
-    totalSaveId.innerText = totalSaveAmount;
-    const totalBalance = income - totalExpense;
-    const remainingBalance = totalBalance - totalSaveAmount
-    remainingBalanceId.innerText = remainingBalance;
+    if (isNaN(income) || isNaN(food) || isNaN(rent) || isNaN(cloth)) {
+        alert('insert number')
+    } else {
+        const totalExpense = parseFloat(food) + parseFloat(rent) + parseFloat(cloth);
+        const saveAmount = parseFloat(saveAmountId.value) / 100;
+        const totalSaveAmount = income * saveAmount;
+        totalSaveId.innerText = totalSaveAmount;
+        const totalBalance = income - totalExpense;
+        const remainingBalance = totalBalance - totalSaveAmount
+        remainingBalanceId.innerText = remainingBalance;
+    }
 }
 
 // Calculate Button
